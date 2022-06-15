@@ -1,7 +1,17 @@
 ---
 _subdirectory: template
 
+_envops:
+  variable_start_string: "{{{"
+  variable_end_string: "}}}"
+
 # questions
 project_name:
   type: str
-  help: What is your project name?
+  help: Choose a project name
+  choices:
+    - Name1
+    - Name2
+
+_tasks:
+  - "{% if project_name == 'Name2' %}{{{ _copier_conf.dst_path }}}/scripts/test.sh{% else %}echo 'Not doing anything! Choose Name2!'{% endif %}"
