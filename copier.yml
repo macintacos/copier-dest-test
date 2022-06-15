@@ -14,4 +14,4 @@ project_name:
     - Name2
 
 _tasks:
-  - "{% if project_name == 'Name2' %}{{{ _copier_conf.dst_path }}}/scripts/test.sh{% else %}echo 'Not doing anything! Choose Name2!'{% endif %}"
+  - "{% if project_name == 'Name2' %}./{{{ _copier_conf.dst_path }}}/scripts/test.sh{% else %}echo 'Not doing anything! Choose Name2!'{% endif %}"
